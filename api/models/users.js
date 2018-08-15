@@ -6,7 +6,8 @@ const usersSchema = mongoose.Schema({
     first_name: { type: String, required: true },
     last_name: { type: String, required: true },
     work_shift: { type: Number, min: 1, max: 3, default: 1 },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    user_role: { type: String, enum: [ 'staff', 'manager'], default: 'staff'}
 });
 
 module.exports = mongoose.model('Users', usersSchema);
